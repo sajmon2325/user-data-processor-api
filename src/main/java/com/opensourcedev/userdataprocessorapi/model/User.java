@@ -19,7 +19,7 @@ public class User {
     String username;
     String name;
     String surname;
-    int age;
+    Integer age;
     Long height;
     Long weight;
     SportType sportType;

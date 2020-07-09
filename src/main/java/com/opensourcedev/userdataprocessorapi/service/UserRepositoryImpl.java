@@ -1,5 +1,7 @@
 package com.opensourcedev.userdataprocessorapi.service;
 
+import com.opensourcedev.userdataprocessorapi.enums.SportType;
+import com.opensourcedev.userdataprocessorapi.model.LocationInformation;
 import com.opensourcedev.userdataprocessorapi.model.User;
 import com.opensourcedev.userdataprocessorapi.repositories.UserRepository;
 import lombok.Getter;
@@ -30,6 +32,19 @@ public class UserRepositoryImpl implements UserService {
 
     public Mono<User> findUserByName(String name){
         return userRepository.findUserByName(name);
+    }
+
+    @Override
+    public Mono<User> findUserByUsernameAndAge(String username, Integer age) {
+        return userRepository.findUserByUsernameAndAge(username, age);
+    }
+
+    @Override
+    public Flux<User> findAllByUsernameAndSportTypeAndLocationInformation(String username,
+                                                                          SportType sportType,
+                                                                          LocationInformation locationInformation) {
+        return userRepository
+                .findAllByUsernameAndSportTypeAndLocationInformation(username, sportType,locationInformation);
     }
 
     @Override
