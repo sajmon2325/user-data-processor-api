@@ -16,6 +16,7 @@ public class User {
 
     @Id
     String id;
+    String publicId;
     String username;
     String name;
     String surname;
