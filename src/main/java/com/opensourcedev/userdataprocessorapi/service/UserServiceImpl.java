@@ -14,7 +14,7 @@ import reactor.core.publisher.Mono;
 @Getter
 @Setter
 @Service
-public class UserRepositoryImpl implements UserService {
+public class UserServiceImpl implements UserService {
 
     UserRepository userRepository;
 

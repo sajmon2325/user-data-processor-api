@@ -1,5 +1,6 @@
 package com.opensourcedev.userdataprocessorapi.service;
 
+
 import com.opensourcedev.userdataprocessorapi.enums.SportType;
 import com.opensourcedev.userdataprocessorapi.model.LocationInformation;
 import com.opensourcedev.userdataprocessorapi.model.User;
