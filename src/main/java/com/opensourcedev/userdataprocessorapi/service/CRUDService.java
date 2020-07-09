@@ -1,10 +1,10 @@
-package com.opensourcedev.userdataprocessorapi.repositories;
+package com.opensourcedev.userdataprocessorapi.service;
 
 import com.opensourcedev.userdataprocessorapi.model.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface CRUDRepository {
+public interface CRUDService {
 
     Flux<User> getUsers();
 

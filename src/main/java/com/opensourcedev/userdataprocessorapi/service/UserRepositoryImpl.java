@@ -1,18 +1,21 @@
 package com.opensourcedev.userdataprocessorapi.service;
 
 import com.opensourcedev.userdataprocessorapi.model.User;
-import com.opensourcedev.userdataprocessorapi.repositories.CRUDRepository;
 import com.opensourcedev.userdataprocessorapi.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 
+@Getter
+@Setter
 @Service
-public class UserRepositoryImpl implements CRUDRepository {
+public class UserRepositoryImpl implements UserService {
 
     UserRepository userRepository;
+
 
 
     @Override
@@ -42,15 +45,6 @@ public class UserRepositoryImpl implements CRUDRepository {
 
 
 
-
-    public UserRepository getUserRepository() {
-        return userRepository;
-    }
-
-    @Autowired
-    public void setUserRepository(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @Override
     public String toString() {

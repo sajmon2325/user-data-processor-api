@@ -1,0 +1,16 @@
+com\opensourcedev\userdataprocessorapi\service\CRUDService.class
+com\opensourcedev\userdataprocessorapi\model\User$UserBuilder.class
+com\opensourcedev\userdataprocessorapi\model\User.class
+com\opensourcedev\userdataprocessorapi\service\UserService.class
+com\opensourcedev\userdataprocessorapi\model\Running$RunningBuilder.class
+com\opensourcedev\userdataprocessorapi\model\LocationInformation$LocationInformationBuilder.class
+com\opensourcedev\userdataprocessorapi\model\LocationInformation.class
+com\opensourcedev\userdataprocessorapi\model\Workout.class
+com\opensourcedev\userdataprocessorapi\enums\SportType.class
+com\opensourcedev\userdataprocessorapi\repositories\UserRepository.class
+com\opensourcedev\userdataprocessorapi\service\UserRepositoryImpl.class
+com\opensourcedev\userdataprocessorapi\model\Cycling.class
+com\opensourcedev\userdataprocessorapi\UserDataProcessorApiApplication.class
+com\opensourcedev\userdataprocessorapi\model\Cycling$CyclingBuilder.class
+com\opensourcedev\userdataprocessorapi\model\Running.class
+com\opensourcedev\userdataprocessorapi\model\Workout$WorkoutBuilder.class
