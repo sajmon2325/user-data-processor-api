@@ -6,13 +6,16 @@ import com.opensourcedev.userdataprocessorapi.model.User;
 import com.opensourcedev.userdataprocessorapi.repositories.UserRepository;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 
+
 @Getter
 @Setter
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -49,7 +52,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Mono<User> save(User user) {
-        return userRepository.save(user);
+       Mono<User> userFromDb = userRepository.findById(user.getPublicId());
+       Mono<User> userMono = Mono.just(user);
+
+       if (userFromDb.equals(userMono)){
+            log.warn("[!!]User is already in DB, no need to save it again!...");
+       }else {
+           return userRepository.save(user);
+       }
+
+       return userMono;
     }
 
     @Override
