@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -20,7 +21,7 @@ import java.net.URI;
 public class UserController {
 
     UserService userService;
-    private static final String rootURL = "http://localhost:8080/user/";
+    private static final String ROOT_URL = "http://localhost:8080/user/";
 
     @Autowired
     public UserController(UserService userService) {
@@ -58,9 +59,9 @@ public class UserController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> saveUser(@RequestBody @Validated User user){
+    public ResponseEntity<String> saveUser(@Valid @RequestBody User user){
         userService.save(user);
-        URI uri = URI.create(rootURL + user.getPublicId());
+        URI uri = URI.create(ROOT_URL + user.getPublicId());
         return ResponseEntity.created(uri).body(HttpStatus.CREATED + "User has been saved!");
     }
 
